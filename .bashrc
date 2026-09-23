@@ -21,7 +21,7 @@ HISTFILESIZE=100000
 # 20260905 コマンド実行時に即時履歴ファイルへ追記
 PROMPT_COMMAND='history -a'
 # 20260905 よく使うコマンドは履歴に残す必要ない
-HISTIGNORE="ls:ll:l:la:cd:cd .:cd ..:z:z .:z ..:clear:exit:code:code ."
+HISTIGNORE="ls:ll:l:la:cd:cd .:cd ..:z:z .:z ..:clear:exit:code:code .:nvim:nvi:vim:nim"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
