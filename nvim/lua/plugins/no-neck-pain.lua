@@ -2,13 +2,7 @@ return {
     "shortcuts/no-neck-pain.nvim",
     event = "BufReadPre",
     config = function()
-        require("no-neck-pain").setup({
-            buffers = {
-                right = {
-                    enabled = false,
-                },
-            },
-        })
+        require("no-neck-pain").setup()
         vim.cmd("NoNeckPain") -- バッファ開いた直後に NoNeckPain を有効化する
 
         -- https://zenn.dev/vim_jp/articles/ff6cd224fab0c7
