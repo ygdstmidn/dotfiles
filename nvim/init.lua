@@ -72,6 +72,16 @@ vim.opt.smarttab = true
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- sessionとして保存するオプション
+vim.o.sessionoptions =
+    "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
+-- 使わないproviderを無効化
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_node_provider = 0
+vim.g.loaded_python3_provider = 0
+
 -- lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -90,6 +100,10 @@ require("lazy").setup({
     spec = {
         -- import plugins
         { import = "plugins" },
+    },
+    -- LuaRocksはいらない(使ってない(✅ OK no plugins require `luarocks`))
+    rocks = {
+        enabled = false,
     },
     -- automatically check for plugin updates
     checker = {

@@ -9,5 +9,12 @@ return {
             },
         })
         vim.lsp.enable("clangd")
+        -- 警告を消すために，doxygenをファイルタイプとして追加(意味はない)
+        vim.filetype.add({
+            extension = {
+                ["c.doxygen"] = "c.doxygen",
+                ["cpp.doxygen"] = "cpp.doxygen",
+            },
+        })
     end,
 }
