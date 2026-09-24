@@ -6,6 +6,7 @@ return {
         { "<M-C-b>" },
         { "<M-C-u>" },
         { "<C-j>" },
+        { "<leader>gg" },
     },
 
     config = function()
@@ -44,6 +45,22 @@ return {
 
         vim.keymap.set("n", "<C-j>", "<cmd>ToggleTerm<CR>", {})
         vim.keymap.set("t", "<C-j>", "<cmd>ToggleTerm<CR>", {})
-        vim.keymap.set("t", "<Esc>", "<cmd>ToggleTerm<CR>", {})
+        vim.keymap.set("n", "<M-C-j>", [[<C-\><C-n>]], {})
+        vim.keymap.set("t", "<M-C-j>", [[<C-\><C-n>]], {})
+
+        vim.keymap.set("n", "<leader>gg", function()
+            local root = vim.fs.root(0, { ".git" })
+            if not root then
+                vim.notify("Not in a git repository")
+                return
+            end
+
+            Terminal:new({
+                cmd = "lazygit -p " .. vim.fn.shellescape(root),
+                hidden = true,
+                direction = "float",
+                float_opts = { border = "curved", width = 999, height = 999 },
+            }):toggle()
+        end, {})
     end,
 }
