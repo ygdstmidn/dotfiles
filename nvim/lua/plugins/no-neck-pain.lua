@@ -8,7 +8,6 @@ return {
                     enabled = false,
                 },
             },
-            autocmd,
         })
         vim.cmd("NoNeckPain") -- バッファ開いた直後に NoNeckPain を有効化する
 
