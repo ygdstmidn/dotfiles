@@ -1,6 +1,10 @@
 return {
     "shortcuts/no-neck-pain.nvim",
     event = "BufReadPre",
+    keys = {
+        { "<leader>nn", "<cmd>NoNeckPain<cr>", desc = "Toggle NoNeckPain" },
+        { "<leader>z", "<cmd>NoNeckPain<cr>", desc = "Toggle NoNeckPain(zen mode)" },
+    },
     config = function()
         require("no-neck-pain").setup()
         vim.cmd("NoNeckPain") -- バッファ開いた直後に NoNeckPain を有効化する
