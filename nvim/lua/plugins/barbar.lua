@@ -7,6 +7,9 @@ return {
     -- event = "VeryLazy", -- 遅いとむかつく．．．
     opts = {
         animation = false, -- 開始直後にずらっとなるのが嫌かも．．
+        sidebar_filetypes = {
+            ["no-neck-pain"] = {},
+        },
     },
     config = function(_, opts)
         require("barbar").setup(opts)
