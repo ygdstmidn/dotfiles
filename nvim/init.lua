@@ -48,6 +48,7 @@ vim.opt.list = true
 vim.opt.listchars = {
     tab = "^ ",
     trail = "~",
+    nbsp = "␣",
 }
 -- 行番号の表示
 vim.opt.number = true
