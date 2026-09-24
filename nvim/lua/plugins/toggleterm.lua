@@ -37,9 +37,11 @@ return {
         })
 
         vim.keymap.set("n", "<M-C-b>", function()
+            vim.api.nvim_command("wall")
             pio_build:toggle()
         end, {})
         vim.keymap.set("n", "<M-C-u>", function()
+            vim.api.nvim_command("wall")
             pio_upload:toggle()
         end, {})
 
@@ -49,6 +51,7 @@ return {
         vim.keymap.set("t", "<M-C-j>", [[<C-\><C-n>]], {})
 
         vim.keymap.set("n", "<leader>gg", function()
+            vim.api.nvim_command("wall")
             local root = vim.fs.root(0, { ".git" })
             if not root then
                 vim.notify("Not in a git repository")
