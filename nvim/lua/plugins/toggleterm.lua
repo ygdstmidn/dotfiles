@@ -2,6 +2,7 @@ return {
     "akinsho/toggleterm.nvim",
     version = "*",
     opts = {},
+    event = "VeryLazy",
     keys = {
         { "<M-C-b>" },
         { "<M-C-u>" },

@@ -6,6 +6,7 @@ return {
         -- optional but recommended
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
+    event = "VeryLazy",
     keys = {
         { mode = "n", "<Leader>ff", "<cmd>Telescope find_files<CR>", {} },
         { mode = "n", "<Leader>fg", "<cmd>Telescope live_grep<CR>", {} },

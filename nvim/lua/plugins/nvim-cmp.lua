@@ -5,7 +5,7 @@ return {
         "hrsh7th/cmp-nvim-lsp",
     },
 
-    event = "InsertEnter",
+    event = { "InsertEnter", "VeryLazy" },
 
     config = function()
         local cmp = require("cmp")
