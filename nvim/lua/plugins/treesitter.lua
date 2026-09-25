@@ -1,14 +1,24 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    branch = "master",
     lazy = false,
     build = ":TSUpdate",
     config = function()
-        require("nvim-treesitter.configs").setup({
-            highlight = {
-                enable = true,
-                additional_vim_regex_highlighting = false,
-            },
+        local parsers = {
+            "cpp",
+            "lua",
+            "markdown",
+            "markdown_inline",
+            "latex",
+            "bash",
+        }
+        require("nvim-treesitter").setup()
+        require("nvim-treesitter").install(parsers)
+        vim.api.nvim_create_autocmd("FileType", {
+            pattern = parsers,
+            callback = function()
+                vim.treesitter.start()
+                vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+            end,
         })
     end,
 }
