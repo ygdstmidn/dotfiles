@@ -68,8 +68,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 -- sessionとして保存するオプション
-vim.o.sessionoptions =
-    "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+vim.o.sessionoptions = "buffers,localoptions"
 
 -- 使わないproviderを無効化
 vim.g.loaded_perl_provider = 0
