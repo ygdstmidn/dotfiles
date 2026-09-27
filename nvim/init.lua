@@ -9,12 +9,6 @@ vim.opt.whichwrap = "b,s,<,>,[,]"
 vim.opt.history = 10000
 -- vim の矩形選択で文字が無くても右へ進める
 vim.opt.virtualedit = "block"
--- 挿入モードでバックスペースで削除できるようにする
-vim.opt.backspace = {
-    "indent",
-    "eol",
-    "start",
-}
 -- wildmenu tabで補完するとき，候補一覧が出る
 vim.opt.wildmenu = true
 
