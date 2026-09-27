@@ -16,5 +16,14 @@ return {
                 ["cpp.doxygen"] = "cpp.doxygen",
             },
         })
+
+        -- 定数を定数の色で表示
+        vim.api.nvim_set_hl(0, "@lsp.typemod.variable.readonly", {
+            link = "Constant",
+        })
+        -- static変数を変数の色で表示
+        vim.api.nvim_set_hl(0, "@lsp.typemod.variable.static", {
+            link = "@lsp.type.variable",
+        })
     end,
 }
