@@ -4,7 +4,7 @@ vim.opt.clipboard:append({
     "unnamedplus",
 })
 -- 行をまたいで移動
-vim.opt.whichwrap = "b,s,h,l,<,>,[,],~"
+vim.opt.whichwrap = "b,s,<,>,[,]"
 -- コマンドラインの履歴を10000件保存する
 vim.opt.history = 10000
 -- vim の矩形選択で文字が無くても右へ進める
