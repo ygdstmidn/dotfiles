@@ -5,6 +5,12 @@ return {
     },
     config = function()
         require("lualine").setup({
+            options = {
+                disabled_filetypes = {
+                    statusline = { "no-neck-pain" },
+                    winbar = { "no-neck-pain" },
+                },
+            },
             sections = {
                 lualine_a = { "mode" },
                 lualine_b = { "branch", "diff", "diagnostics" },
