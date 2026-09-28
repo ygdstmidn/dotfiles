@@ -63,6 +63,24 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.smarttab = true
 
+-- --------------------------------------
+-- 折りたたみ
+-- --------------------------------------
+function Foldtext()
+    local line = vim.fn.getline(vim.v.foldstart)
+    local count = vim.v.foldend - vim.v.foldstart + 1
+    -- 先に行の内容を表示し，次に折りたたまれた行数を表示する
+    return string.format("%s (%d lines folded)", line, count)
+end
+-- indentで折りたたむ
+vim.opt.foldmethod = "indent"
+-- ファイルを開いたとき，折りたたみを開いた状態で表示する
+vim.opt.foldlevel = 99
+-- 折りたたみのテキストをカスタマイズ
+vim.opt.foldtext = "v:lua.Foldtext()"
+-- 折りたたまれた行を空白で表示
+vim.opt.fillchars = { fold = " " }
+
 -- リーダーキー
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
