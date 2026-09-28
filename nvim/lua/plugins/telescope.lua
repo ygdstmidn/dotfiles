@@ -8,11 +8,8 @@ return {
     },
     event = "VeryLazy",
     keys = {
-        { mode = "n", "<Leader>ff", "<cmd>Telescope find_files<CR>", {} },
         { mode = "n", "<Leader>fg", "<cmd>Telescope live_grep<CR>", {} },
-        { mode = "n", "<Leader>fb", "<cmd>Telescope buffers<CR>", {} },
-        { mode = "n", "<Leader>fh", "<cmd>Telescope help_tags<CR>", {} },
-        { mode = "n", "<Leader>fc", "<cmd>Telescope commands<CR>", {} },
+        { mode = "n", "<Leader>fc", "<cmd>Telescope command_history<CR>", {} },
     },
     opts = {
         defaults = {
