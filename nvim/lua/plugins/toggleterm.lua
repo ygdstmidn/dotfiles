@@ -6,6 +6,8 @@ return {
     keys = {
         { "<M-C-b>" },
         { "<M-C-u>" },
+        { "<leader>b" },
+        { "<leader>u" },
         { "<C-j>" },
         { "<leader>gg" },
     },
@@ -42,6 +44,15 @@ return {
             pio_build:toggle()
         end, {})
         vim.keymap.set("n", "<M-C-u>", function()
+            vim.api.nvim_command("wall")
+            pio_upload:toggle()
+        end, {})
+        -- PlatformIOにはleaderキーでのマッピングを追加
+        vim.keymap.set("n", "<leader>b", function()
+            vim.api.nvim_command("wall")
+            pio_build:toggle()
+        end, {})
+        vim.keymap.set("n", "<leader>u", function()
             vim.api.nvim_command("wall")
             pio_upload:toggle()
         end, {})
