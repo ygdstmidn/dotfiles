@@ -20,6 +20,7 @@ local function switch_header_source()
         root = vim.uv.cwd()
     end
     local dir = vim.fs.dirname(file)
+    local home = os.getenv("HOME")
 
     while dir do
         local found = vim.fs.find(targets, {
@@ -45,6 +46,10 @@ local function switch_header_source()
         end
 
         if dir == root then
+            break
+        end
+
+        if dir == home then
             break
         end
 
