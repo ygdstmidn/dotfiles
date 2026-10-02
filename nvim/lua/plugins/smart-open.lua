@@ -19,6 +19,16 @@ return {
             end,
             desc = "Smart Open",
         },
+        {
+            "<leader>FF",
+            function()
+                require("telescope").extensions.smart_open.smart_open({
+                    cwd_only = false, -- PC全体から検索
+                    filename_first = true, -- ファイル名を先頭に(PATHが長く，見づらいので)
+                })
+            end,
+            desc = "Smart Open(from all of PC)",
+        },
     },
     config = function()
         require("telescope").load_extension("smart_open")
