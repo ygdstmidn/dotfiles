@@ -2,10 +2,13 @@ return {
     "neovim/nvim-lspconfig",
     event = "VeryLazy",
     config = function()
+        local home = os.getenv("HOME")
+        local platformio_path = home
+            .. "/.platformio/packages/toolchain-gccarmnoneeabi@*/bin/arm-none-eabi-*"
         vim.lsp.config("clangd", {
             cmd = {
                 "clangd",
-                "--query-driver=/home/maheo/.platformio/packages/toolchain-gccarmnoneeabi@*/bin/arm-none-eabi-*",
+                "--query-driver=" .. platformio_path,
             },
         })
         vim.lsp.enable("clangd")
