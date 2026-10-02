@@ -21,6 +21,7 @@ local function switch_header_source()
     end
     local dir = vim.fs.dirname(file)
     local home = os.getenv("HOME")
+    local platformio_dir = home .. "/.platformio"
 
     while dir do
         local found = vim.fs.find(targets, {
@@ -50,6 +51,10 @@ local function switch_header_source()
         end
 
         if dir == home then
+            break
+        end
+
+        if dir == platformio_dir then
             break
         end
 
