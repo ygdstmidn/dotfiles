@@ -11,6 +11,19 @@ vim.opt.history = 10000
 vim.opt.virtualedit = "block"
 -- wildmenu tabで補完するとき，候補一覧が出る
 vim.opt.wildmenu = true
+-- 外部でファイルが変更されたとき，読み込む
+vim.opt.autoread = true
+-- autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * silent! checktime
+vim.api.nvim_create_autocmd({
+    "FocusGained",
+    "BufEnter",
+    "CursorHold",
+    "CursorHoldI",
+}, {
+    callback = function()
+        vim.cmd("silent! checktime")
+    end,
+})
 
 -- --------------------------------------
 -- 検索
