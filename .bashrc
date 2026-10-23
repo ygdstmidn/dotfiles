@@ -165,7 +165,7 @@ alias vi='nvim'
 alias vm='nvim'
 alias vim='nvim'
 alias nv='nvim'
-alias nvm='nvim'
+# alias nvm='nvim'
 alias nvi='nvim'
 alias nivm='nvim'
 
@@ -180,3 +180,7 @@ alias nbim='nvim'
 alias nibm='nvim'
 
 alias nim='nvim'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
