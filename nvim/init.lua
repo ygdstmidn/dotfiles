@@ -7,13 +7,15 @@ vim.opt.clipboard:append({
 vim.opt.whichwrap = "b,s,<,>,[,]"
 -- コマンドラインの履歴を10000件保存する
 vim.opt.history = 10000
--- vim の矩形選択で文字が無くても右へ進める
-vim.opt.virtualedit = "block"
 -- wildmenu tabで補完するとき，候補一覧が出る
 vim.opt.wildmenu = true
+-- vim の矩形選択で文字が無くても右へ進める
+vim.opt.virtualedit = "block"
+-- リーダーキー
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 -- 外部でファイルが変更されたとき，読み込む
 vim.opt.autoread = true
--- autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * silent! checktime
 vim.api.nvim_create_autocmd({
     "FocusGained",
     "BufEnter",
@@ -46,9 +48,6 @@ vim.keymap.set("n", "<Esc><Esc>", "<cmd>nohlsearch<CR>")
 vim.opt.display = "lastline"
 -- 長い行を折り返さない
 vim.opt.wrap = false
--- 対応する括弧やブレースを表示
--- vim.opt.showmatch = true
--- vim.opt.matchtime = 1
 -- 不可視文字を表示
 vim.opt.list = true
 -- 行末のスペースを可視化
@@ -59,8 +58,6 @@ vim.opt.listchars = {
 }
 -- 行番号の表示
 vim.opt.number = true
---メッセージ表示欄を2行確保
--- vim.opt.cmdheight = 2
 
 -- --------------------------------------
 -- インデント設定
@@ -93,13 +90,6 @@ vim.opt.foldlevel = 99
 vim.opt.foldtext = "v:lua.Foldtext()"
 -- 折りたたまれた行を空白で表示
 vim.opt.fillchars = { fold = " " }
-
--- リーダーキー
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
--- sessionとして保存するオプション
-vim.o.sessionoptions = "buffers,localoptions"
 
 -- 使わないproviderを無効化
 vim.g.loaded_perl_provider = 0
