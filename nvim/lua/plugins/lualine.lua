@@ -3,36 +3,34 @@ return {
     dependencies = {
         "nvim-tree/nvim-web-devicons",
     },
-    config = function()
-        require("lualine").setup({
-            options = {
-                disabled_filetypes = {
-                    statusline = { "no-neck-pain" },
-                    winbar = { "no-neck-pain" },
-                },
+    opts = {
+        options = {
+            disabled_filetypes = {
+                statusline = { "no-neck-pain" },
+                winbar = { "no-neck-pain" },
             },
-            sections = {
-                lualine_a = { "mode" },
-                lualine_b = { "branch", "diff", "diagnostics" },
-                lualine_c = { "filename" },
-                lualine_x = {
-                    {
-                        -- encoding: エンコーディングがUTF-8の場合は表示しない。
-                        function()
-                            return (vim.bo.fenc or vim.go.enc):gsub("^utf%-8$", "")
-                        end,
-                    },
-                    {
-                        -- fileformat: &ffがunixの場合は表示しない。
-                        function()
-                            return vim.bo.fileformat:gsub("^unix$", "")
-                        end,
-                    },
-                    "filetype",
+        },
+        sections = {
+            lualine_a = { "mode" },
+            lualine_b = { "branch", "diff", "diagnostics" },
+            lualine_c = { "filename" },
+            lualine_x = {
+                {
+                    -- encoding: エンコーディングがUTF-8の場合は表示しない。
+                    function()
+                        return (vim.bo.fenc or vim.go.enc):gsub("^utf%-8$", "")
+                    end,
                 },
-                lualine_y = { "progress" },
-                lualine_z = { "location" },
+                {
+                    -- fileformat: &ffがunixの場合は表示しない。
+                    function()
+                        return vim.bo.fileformat:gsub("^unix$", "")
+                    end,
+                },
+                "filetype",
             },
-        })
-    end,
+            lualine_y = { "progress" },
+            lualine_z = { "location" },
+        },
+    },
 }

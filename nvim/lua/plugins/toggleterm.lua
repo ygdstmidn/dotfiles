@@ -1,7 +1,6 @@
 return {
     "akinsho/toggleterm.nvim",
     version = "*",
-    opts = {},
     event = "VeryLazy",
     keys = {
         { "<M-C-b>" },
@@ -11,18 +10,18 @@ return {
         { "<C-j>" },
         { "<leader>gg" },
     },
-
-    config = function()
-        require("toggleterm").setup({
-            on_create = function(term)
-                if vim.fn.filereadable("platformio.ini") == 1 then
-                    term:send("source ~/.platformio/penv/bin/activate")
-                    vim.schedule(function()
-                        term:send("clear")
-                    end)
-                end
-            end,
-        })
+    opts = {
+        on_create = function(term)
+            if vim.fn.filereadable("platformio.ini") == 1 then
+                term:send("source ~/.platformio/penv/bin/activate")
+                vim.schedule(function()
+                    term:send("clear")
+                end)
+            end
+        end,
+    },
+    config = function(_, opts)
+        require("toggleterm").setup(opts)
 
         local Terminal = require("toggleterm.terminal").Terminal
 

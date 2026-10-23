@@ -1,10 +1,11 @@
 return {
     "kevinhwang91/nvim-hlslens",
     event = "VeryLazy",
-    config = function()
-        require("hlslens").setup({
-            nearest_float_when = "never",
-        })
+    opts = {
+        nearest_float_when = "never",
+    },
+    config = function(_, opts)
+        require("hlslens").setup(opts)
 
         local kopts = { noremap = true, silent = true }
         vim.keymap.set(
