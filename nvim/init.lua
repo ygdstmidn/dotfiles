@@ -70,7 +70,7 @@ function Foldtext()
     local line = vim.fn.getline(vim.v.foldstart)
     local count = vim.v.foldend - vim.v.foldstart + 1
     -- 先に行の内容を表示し，次に折りたたまれた行数を表示する
-    return string.format("%s (%d lines folded)", line, count)
+    return string.format("%s 󰁂 %d", line, count)
 end
 -- indentで折りたたむ
 vim.opt.foldmethod = "indent"
