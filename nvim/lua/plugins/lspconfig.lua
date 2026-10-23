@@ -28,5 +28,10 @@ return {
         vim.api.nvim_set_hl(0, "@lsp.typemod.variable.static", {
             link = "@lsp.type.variable",
         })
+
+        vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+        vim.keymap.set("n", "gr", vim.lsp.buf.references)
+        vim.keymap.set("n", "K", vim.lsp.buf.hover)
+        vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
     end,
 }
