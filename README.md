@@ -6,6 +6,7 @@
 ln -s ~/dotfiles/lazygit/config.yml ~/.config/lazygit/config.yml
 ln -s ~/dotfiles/nvim ~/.config/nvim
 ln -s ~/dotfiles/.bashrc ~/.bashrc
+ln -s ~/dotfiles/.stylua.toml ~/.stylua.toml
 sudo ln -s ~/dotfiles/keyd /etc/keyd
 ```
 
