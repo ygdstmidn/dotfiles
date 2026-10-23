@@ -2,20 +2,17 @@ return {
     "petertriho/nvim-scrollbar",
     dependencies = {
         "lewis6991/gitsigns.nvim",
-        "kevinhwang91/nvim-hlslens",
     },
+    branch = "refactor/v2",
     event = "VeryLazy",
     opts = {
-        handlers = {
+        exclude = {
+            filetypes = {
+                "no-neck-pain",
+            },
+        },
+        providers = {
             gitsigns = true,
-            search = true,
         },
     },
-    config = function()
-        require("scrollbar").setup()
-        require("gitsigns").setup()
-        require("hlslens").setup()
-        require("scrollbar.handlers.gitsigns").setup()
-        require("scrollbar.handlers.search").setup()
-    end,
 }
