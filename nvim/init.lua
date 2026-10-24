@@ -11,9 +11,6 @@ vim.opt.history = 10000
 vim.opt.wildmenu = true
 -- vim の矩形選択で文字が無くても右へ進める
 vim.opt.virtualedit = "block"
--- リーダーキー
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
 -- 外部でファイルが変更されたとき，読み込む
 vim.opt.autoread = true
 vim.api.nvim_create_autocmd({
@@ -80,6 +77,9 @@ vim.opt.foldlevel = 99
 vim.opt.foldcolumn = "1" -- 左端の折りたたみ欄の幅
 vim.opt.fillchars = "fold: ,foldopen:,foldsep: ,foldinner: ,foldclose:"
 
+-- リーダーキー
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 -- 使わないproviderを無効化
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
