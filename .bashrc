@@ -180,6 +180,7 @@ alias nbim='nvim'
 alias nibm='nvim'
 
 alias nim='nvim'
+alias n='nvim'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
