@@ -23,6 +23,13 @@ vim.api.nvim_create_autocmd({
         vim.cmd("silent! checktime")
     end,
 })
+-- 新しい行で，自動でコメントにしない
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "*",
+    callback = function()
+        vim.cmd("silent! set formatoptions-=ro")
+    end,
+})
 
 -- --------------------------------------
 -- 検索
